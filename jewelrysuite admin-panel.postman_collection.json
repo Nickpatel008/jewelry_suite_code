@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "0b2e38ad-7e9c-471e-b6ff-bdbf987c067d",
+		"name": "jewelrysuite admin-panel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29719326"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"d@yopmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"profile\": \"Super Admin\",\r\n    \"name\": \"Admin\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"BSaNCAd5nmkmP1Uk\",\r\n    \"contact\": \"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jewelry Types",
+			"item": [
+				{
+					"name": "types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jewelry/types",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jewelry",
+								"types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subtypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jewelry/subtypes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jewelry",
+								"subtypes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jewelry Metal Types",
+			"item": [
+				{
+					"name": "metal-types",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jewelry/metal-types",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jewelry",
+								"metal-types"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jewelry CRUD",
+			"item": [
+				{
+					"name": "addJewelry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jewelry_type_sub_id\": \"abc0264d-f00d-442b-a39b-1ccbeb6cd749\",\r\n    \"title\": \"Radiant Sapphire Earrings\",\r\n    \"description\": \"Exquisite sapphire earrings with brilliant cut stones, set in 18k white gold for a timeless look.\",\r\n    \"weight\": 12.5,\r\n    \"metal_id\": \"789f2d94-7520-4f31-93a4-73a76cb20518\",\r\n    \"images\": [\r\n        \"https://example.com/images/sapphire_earrings1.jpg\",\r\n        \"https://example.com/images/sapphire_earrings2.jpg\"\r\n    ],\r\n    \"natural_price\": 3000.0,\r\n    \"lab_price\": 2200.0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/jewelry/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jewelry",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Jewerly",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jewelry_type_sub_id\": \"abc0264d-f00d-442b-a39b-1ccbeb6cd749\",\r\n    \"title\": \"Radiant Sapphire Earrings\",\r\n    \"description\": \"Exquisite sapphire earrings with brilliant cut stones, set in 18k white gold for a timeless look.\",\r\n    \"weight\": 12.5,\r\n    \"metal_id\": \"789f2d94-7520-4f31-93a4-73a76cb20518\",\r\n    \"images\": [\r\n        \"https://example.com/images/sapphire_earrings1.jpg\",\r\n        \"https://example.com/images/sapphire_earrings2.jpg\"\r\n    ],\r\n    \"natural_price\": 3000.0,\r\n    \"lab_price\": 2200.0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/jewelry/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jewelry",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jewerly by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jewelry_type_sub_id\": \"abc0264d-f00d-442b-a39b-1ccbeb6cd749\",\r\n    \"title\": \"Radiant Sapphire Earrings\",\r\n    \"description\": \"Exquisite sapphire earrings with brilliant cut stones, set in 18k white gold for a timeless look.\",\r\n    \"weight\": 12.5,\r\n    \"metal_id\": \"789f2d94-7520-4f31-93a4-73a76cb20518\",\r\n    \"images\": [\r\n        \"https://example.com/images/sapphire_earrings1.jpg\",\r\n        \"https://example.com/images/sapphire_earrings2.jpg\"\r\n    ],\r\n    \"natural_price\": 3000.0,\r\n    \"lab_price\": 2200.0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/jewelry/240d3ff9-ce43-4cea-b685-6489a7fb00d8",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jewelry",
+								"240d3ff9-ce43-4cea-b685-6489a7fb00d8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
